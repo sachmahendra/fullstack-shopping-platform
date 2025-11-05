@@ -144,7 +144,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't hardcode secret key in production!
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'temporary-secret-key')
 
-DEBUG = False
+DEBUG = True
 
 # Replace this with your Render web service domain
 ALLOWED_HOSTS = ['fullstack-shopping-platform.onrender.com']

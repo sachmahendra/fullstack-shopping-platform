@@ -136,13 +136,18 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '8o353)z(_*^04+jhey!m*q3_no@vhn*7v8(6xz4rl6=kunu=it'
+# SECRET_KEY = '8o353)z(_*^04+jhey!m*q3_no@vhn*7v8(6xz4rl6=kunu=it'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = False
+# ALLOWED_HOSTS = ['*']  # you can later replace * with 'yourapp.onrender.com'
+
+# SECURITY WARNING: don't hardcode secret key in production!
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'temporary-secret-key')
 
 DEBUG = False
-ALLOWED_HOSTS = ['*']  # you can later replace * with 'yourapp.onrender.com'
+
+# Replace this with your Render web service domain
+ALLOWED_HOSTS = ['fullstack-shopping-platform.onrender.com']
 
 # Application definition
 INSTALLED_APPS = [
